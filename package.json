@@ -1,0 +1,48 @@
+{
+  "name": "tva-pro",
+  "version": "1.2.0",
+  "description": "Application locale combinée Calculatrice TVA et TVA Manager",
+  "main": "main.js",
+  "author": "Mohamed Amine",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "fr.mohamedamine.tvapro",
+    "productName": "TVA PRO",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "app.js",
+      "assets/tva-pro-icon.ico"
+    ],
+    "icon": "assets/tva-pro-icon.ico",
+    "win": {
+      "target": "nsis",
+      "artifactName": "TVA-PRO-Setup-${version}.exe",
+      "icon": "assets/tva-pro-icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "TVA PRO",
+      "installerIcon": "assets/tva-pro-icon.ico",
+      "uninstallerIcon": "assets/tva-pro-icon.ico",
+      "installerHeaderIcon": "assets/tva-pro-icon.ico"
+    }
+  }
+}
